@@ -1,7 +1,19 @@
+let textfield;
+
+
 function setup() {
-	createCanvas(windowWidth, windowHeight);
+  createCanvas(400, 400);
+  createP('psych thats the wrong number');
+  textfield = createInput();
+
+  textfield.changed(newText);
+  textfield.input(newTyping);
 }
 
-function draw() {
+function newText() {
+  console.log(textfield.value());
+}
 
+function newTyping() {
+  createP(textfield.value());
 }
